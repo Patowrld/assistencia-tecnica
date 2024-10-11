@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pedido de Assistência Técnica Premium</title>
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <!-- Font Awesome Icons -->
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: linear-gradient(135deg, #FF6B6B, #556270);
+            background-size: 300% 300%;
+            animation: gradientBG 10s ease infinite;
+            color: #333;
+            overflow-x: hidden;
+        }
+
+        @keyframes gradientBG {
+            0% {
+                background-position: 0% 50%;
+            }
+            50% {
+                background-position: 100% 50%;
+            }
+            100% {
+                background-position: 0% 50%;
+            }
+        }
+
+        .navbar {
+            background-color: #00796b;
+            padding: 20px;
+            text-align: center;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            transition: background-color 0.3s ease;
+        }
+
+        .navbar h1 {
+            color: #fff;
+            font-weight: 600;
+            font-size: 28px;
+        }
+
+        .progress-bar {
+            width: 100%;
+            height: 5px;
+            background: linear-gradient(to right, #23d5ab, #23a6d5);
+            animation: progress 2s ease-in-out;
+        }
+
+        @keyframes progress {
+            0% {
+                width: 0;
+            }
+            100% {
+                width: 100%;
+            }
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 60px auto;
+            background-color: #fff;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            padding: 40px;
+            animation: fadeIn 1.5s ease-in-out;
+        }
+
+        @keyframes fadeIn {
+            0% {
+                opacity: 0;
+                transform: translateY(50px);
+            }
+            100% {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        h1 {
+            text-align: center;
+            color: #00796b;
+            font-size: 32px;
+            margin-bottom: 30px;
+        }
+
+        label {
+            font-weight: 600;
+            display: block;
+            margin-bottom: 8px;
+            color: #333;
+            font-size: 18px;
+        }
+
+        input, textarea, select {
+            width: 100%;
+            padding: 15px;
+            margin: 10px 0 20px 0;
+            border-radius: 10px;
+            border: 2px solid #eee;
+            font-size: 16px;
+            transition: all 0.3s ease;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        input:hover, textarea:hover, select:hover {
+            transform: scale(1.03);
+        }
+
+        input:focus, textarea:focus, select:focus {
+            border-color: #00796b;
+            box-shadow: 0 0 10px rgba(0, 121, 107, 0.3);
+        }
+
+        button {
+            background-color: #00796b;
+            color: white;
+            padding: 15px 0;
+            border: none;
+            border-radius: 50px;
+            width: 100%;
+            font-size: 18px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: background-color 0.3s ease, transform 0.3s ease;
+            box-shadow: 0 8px 15px rgba(0, 121, 107, 0.2);
+        }
+
+        button:hover {
+            background-color: #004d40;
+            transform: translateY(-3px);
+        }
+
+        button:active {
+            transform: translateY(3px);
+        }
+
+        .section-card {
+            background-color: #f7f9fa;
+            border-radius: 15px;
+            padding: 20px;
+            margin-bottom: 30px;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+        }
+
+        footer {
+            text-align: center;
+            padding: 20px;
+            background-color: #00796b;
+            color: white;
+            position: fixed;
+            width: 100%;
+            bottom: 0;
+        }
+
+        footer p {
+            margin: 0;
+            font-size: 14px;
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                padding: 30px;
+            }
+
+            h1 {
+                font-size: 28px;
+            }
+
+            .navbar h1 {
+                font-size: 24px;
+            }
+        }
+
+    </style>
+</head>
+<body>
+
+    <!-- Navbar -->
+    <div class="navbar">
+        <h1>Assistência Técnica Premium</h1>
+    </div>
+
+    <!-- Progress Bar -->
+    <div class="progress-bar"></div>
+
+    <!-- Container -->
+    <div class="container">
+        <h1><i class="fas fa-tools"></i> Pedido de Assistência Técnica</h1>
+        <form>
+            <div class="section-card">
+                <!-- Nome -->
+                <label for="nome"><i class="fas fa-user"></i> Nome Completo</label>
+                <input type="text" id="nome" placeholder="Digite seu nome completo" required>
+            </div>
+
+            <div class="section-card">
+                <!-- E-mail -->
+                <label for="email"><i class="fas fa-envelope"></i> E-mail</label>
+                <input type="email" id="email" placeholder="Digite seu e-mail" required>
+
+                <!-- Telefone -->
+                <label for="telefone"><i class="fas fa-phone"></i> Telefone</label>
+                <input type="tel" id="telefone" placeholder="Digite seu telefone" required>
+            </div>
+
+            <div class="section-card">
+                <!-- Produto -->
+                <label for="produto"><i class="fas fa-laptop"></i> Produto</label>
+                <select id="produto" required>
+                    <option value="" disabled selected>Selecione o produto</option>
+                    <option value="Computador">Computador</option>
+                    <option value="Notebook">Notebook</option>
+                    <option value="Tablet">Tablet</option>
+                    <option value="Smartphone">Smartphone</option>
+                    <option value="Impressora">Impressora</option>
+                </select>
+            </div>
+
+            <div class="section-card">
+                <!-- Tipo de problema -->
+                <label><i class="fas fa-exclamation-circle"></i> Tipo de Problema</label>
+                <div class="radios">
+                    <label>
+                        <input type="radio" name="problema" value="hardware" required>
+                        Hardware
+                    </label>
+                    <label>
+                        <input type="radio" name="problema" value="software" required>
+                        Software
+                    </label>
+                    <label>
+                        <input type="radio" name="problema" value="rede" required>
+                        Rede
+                    </label>
+                </div>
+
+                <!-- Descrição do Problema -->
+                <label for="descricao"><i class="fas fa-comment"></i> Descrição do Problema</label>
+                <textarea id="descricao" rows="4" placeholder="Descreva o problema" required></textarea>
+            </div>
+
+            <!-- Botão de Enviar -->
+            <button type="submit"><i class="fas fa-paper-plane"></i> Enviar Pedido</button>
+        </
